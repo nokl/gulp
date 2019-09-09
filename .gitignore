@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules
+dist
+
+# .vscode以下は特定のファイル以外管理対象外
+.vscode/*
+!.vscode/extensions.json
