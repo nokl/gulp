@@ -4,14 +4,14 @@
 // @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap&subset=japanese');
 
 // Variables
-@import "base/variables";
+@import 'base/variables';
 
 // Mixins
-@import "modules/fluid_style";
+@import 'modules/fluid_style';
 
 // Base
-@import "~ress";
-@import "base/base";
+@import '~ress';
+@import 'base/base';
 
 // Animations
 // @import 'modules/xxx';
@@ -19,4 +19,4 @@
 // ==========================================================================
 // Pages
 // ==========================================================================
-@import "pages/index";
+@import 'pages/index';

@@ -14,17 +14,17 @@ import packageImporter from 'node-sass-package-importer';
 
 
 export function styles() {
-	return src(paths.style.src, { sourcemaps: true })
-		.pipe(plumber({
-			errorHandler: notify.onError('<%= error.message %>')
-		}))
-		.pipe(sass({
-			outputStyle: 'compressed',
-			importer: packageImporter({
-				extensions: ['.scss', '.css']
-			})
-		}).on('error', sass.logError))
-		.pipe(postcss([css_variables]))
-		.pipe(autoprefixer(pkg.browserslist))
-		.pipe(dest(paths.style.dest, { sourcemaps: '.' }));
+    return src(paths.style.src, { sourcemaps: true })
+        .pipe(plumber({
+            errorHandler: notify.onError('<%= error.message %>')
+        }))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            importer: packageImporter({
+                extensions: ['.scss', '.css']
+            })
+        }).on('error', sass.logError))
+        .pipe(postcss([css_variables]))
+        .pipe(autoprefixer(pkg.browserslist))
+        .pipe(dest(paths.style.dest, { sourcemaps: '.' }));
 }
