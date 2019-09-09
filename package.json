@@ -13,7 +13,7 @@
   "scripts": {
     "start": "yarn dev",
     "dev": "cross-env NODE_ENV=development gulp dev",
-    "prod": "cross-env NODE_ENV=production gulp prod",
+    "build": "cross-env NODE_ENV=production gulp build",
     "tasks": "gulp --tasks"
   },
   "browserslist": [

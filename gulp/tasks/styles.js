@@ -1,6 +1,6 @@
 // config
 import pkg from '../../package';
-import { paths } from '../conf';
+import { isProd, paths } from '../conf';
 
 // modules
 import { src, dest } from 'gulp';
@@ -14,7 +14,7 @@ import packageImporter from 'node-sass-package-importer';
 
 
 export function styles() {
-    return src(paths.style.src, { sourcemaps: true })
+    return src(paths.style.src, { sourcemaps: !isProd })
         .pipe(plumber({
             errorHandler: notify.onError('<%= error.message %>')
         }))
