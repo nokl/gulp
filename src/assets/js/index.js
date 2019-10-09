@@ -3,7 +3,7 @@ export default class Index {
         this.init(opt);
     }
     init(opt) {
-        this.el = el;
+        this.opt = opt;
         console.log('Hello World');
     }
 }
