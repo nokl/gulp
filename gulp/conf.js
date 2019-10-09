@@ -3,6 +3,7 @@ export const DEST = `dist`;
 export const DEST_ASSETS = `${DEST}/assets`;
 export const cacheRegex = /__NC__/g;
 export const isProd = process.env.NODE_ENV === 'production';
+const scriptExt = '*.js';
 
 export const paths = {
     html: {
@@ -15,7 +16,8 @@ export const paths = {
         map: `${DEST_ASSETS}/css/maps/`,
     },
     script: {
-        src: `${SRC}/assets/js/index.js`,
+        ext: scriptExt,
+        src: `${SRC}/assets/js/${scriptExt}`,
         dest: `${DEST_ASSETS}/js`,
         map: `${DEST_ASSETS}/js/maps/`,
     },

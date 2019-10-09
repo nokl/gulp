@@ -1,15 +1,23 @@
+// config
 import path from 'path';
+
+// modules
 import { paths } from './gulp/conf';
+import { sync } from 'glob';
+
+const cwd = paths.script.src.replace(paths.script.ext, '');
+const entries = {};
+sync(paths.script.ext, { cwd }).map(key => {
+    entries[key] = path.resolve(__dirname, cwd + key);
+});
 
 export const webpackConfig = {
 	mode: process.env.NODE_ENV || 'development',
 	devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
-	entry: {
-		index: path.resolve(__dirname, paths.script.src),
-	},
+	entry: entries,
 	output: {
 		path: path.resolve(__dirname, paths.script.dest),
-		filename: 'index.js',
+		filename: '[name]',
 	},
 	module: {
 		rules: [
