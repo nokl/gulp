@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.6.2",
     "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
     "cross-env": "^5.2.1",
     "del": "^5.1.0",
     "gulp": "^4.0.2",

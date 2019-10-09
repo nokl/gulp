@@ -11,15 +11,16 @@ import { styles } from './gulp/tasks/styles';
 import { scripts } from './gulp/tasks/scripts';
 import { images } from './gulp/tasks/images';
 import { copy } from './gulp/tasks/copy';
+import { serve, reload } from './gulp/tasks/serve';
 
 const watchFiles = () => {
     const watchOptions = { interval: 500 };
-    watch(paths.style.src[0], watchOptions, series(styles));
-    watch(paths.html.src, watchOptions, series(html));
-    watch(paths.script.src, watchOptions, series(scripts));
-    watch(paths.image.src, watchOptions, series(images));
-    watch(paths.fonts.src, watchOptions, series(copy));
-    watch(paths.static.src, watchOptions, series(copy));
+    watch(paths.style.src[0], watchOptions, series(styles, reload));
+    watch(paths.html.src, watchOptions, series(html, reload));
+    watch(paths.script.src, watchOptions, series(scripts, reload));
+    watch(paths.image.src, watchOptions, series(images, reload));
+    watch(paths.fonts.src, watchOptions, series(copy, reload));
+    watch(paths.static.src, watchOptions, series(copy, reload));
 };
 
 /**
@@ -28,7 +29,7 @@ const watchFiles = () => {
 export const dev = series(
     clean,
     parallel(styles, html, scripts, images, copy),
-    watchFiles
+    parallel(serve, watchFiles)
 );
 
 /**
