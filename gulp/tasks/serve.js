@@ -11,7 +11,6 @@ const server = browserSync.create();
  */
 export function reload(cb) {
     server.reload();
-    console.log(cb);
     cb();
 }
 
@@ -21,7 +20,6 @@ export function reload(cb) {
 export function serve(cb) {
     server.init({
         notify: false,
-        // proxy: 'localhost',
         port: 3000,
         startPath: `/`,
         ghostMode: false,
