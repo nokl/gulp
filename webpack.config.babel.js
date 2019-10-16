@@ -5,6 +5,9 @@ import path from 'path';
 import { paths } from './gulp/conf';
 import { sync } from 'glob';
 
+// plugins
+import TerserPlugin from 'terser-webpack-plugin';
+
 const cwd = paths.script.src.replace(paths.script.ext, '');
 const entries = {};
 sync(paths.script.ext, { cwd }).map(key => {
@@ -36,5 +39,10 @@ export const webpackConfig = {
 				]
 			}
 		]
-	},
+    },
+    plugins: [],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 }
