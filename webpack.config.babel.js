@@ -15,34 +15,40 @@ sync(paths.script.ext, { cwd }).map(key => {
 });
 
 export const webpackConfig = {
-	mode: process.env.NODE_ENV || 'development',
-	devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
-	entry: entries,
-	output: {
-		path: path.resolve(__dirname, paths.script.dest),
-		filename: '[name]',
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: "babel-loader",
-						options: {
-							presets: [
-								"@babel/preset-env"
-							]
-						}
-					}
-				]
-			}
-		]
+    mode: process.env.NODE_ENV || 'development',
+    devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
+    entry: entries,
+    output: {
+        path: path.resolve(__dirname, paths.script.dest),
+        filename: '[name]',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                        },
+                    },
+                ],
+            },
+        ],
     },
     plugins: [],
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                cache: false,
+                extractComments: {
+                    filename: 'LICENSES',
+                },
+            }),
+        ],
     },
-}
+};
