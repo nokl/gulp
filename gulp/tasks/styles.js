@@ -25,6 +25,9 @@ export function styles() {
             })
         }).on('error', sass.logError))
         .pipe(postcss([css_variables]))
-        .pipe(autoprefixer(pkg.browserslist))
+        .pipe(autoprefixer({
+            grid: 'autoplace',
+            cascade: false,
+        }))
         .pipe(dest(paths.style.dest, { sourcemaps: '.' }));
 }
