@@ -10,6 +10,6 @@ $ yarn install
 $ yarn dev
 
 # production build
-$ yarn prod
+$ yarn build
 
 ```
