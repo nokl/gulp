@@ -1,13 +1,12 @@
 // vwの取得
-@function get_vw($size, $viewport: 1280) {
+@function get_vw($size, $viewport: var(--base-size)) {
     $rate: 100 / $viewport;
-    @return $rate * $size * 1vw;
+    @return calc(#{$rate} * #{$size} * 1vw);
 }
 
-// vwの取得
-@function get_vw_sp($size, $viewport: 750) {
-    $rate: 100 / $viewport;
-    @return $rate * $size * 1vw;
+// %の取得
+@function get_per($size, $parent: var(--base-size)) {
+    @return calc(#{$size} / #{$parent} * 100%);
 }
 
 // 単位を取り、値を取得

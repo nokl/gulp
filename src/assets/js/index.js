@@ -8,4 +8,4 @@ export default class Index {
     }
 }
 
-var index = new Index();
+new Index();
