@@ -34,9 +34,7 @@ $max-vw: 1680;
             $min-val: nth($rule, 2);
             $max-val: nth($rule, 3);
             #{$prop}: calc(
-                #{$min-val} +
-                    #{strip-unit($max-val - $min-val)} *
-                    ((100vw - #{$min-vw}px) / #{$max-vw - $min-vw})
+                #{$min-val} + #{strip-unit($max-val - $min-val)} * ((100vw - #{$min-vw}px) / #{$max-vw - $min-vw})
             );
         }
     }
@@ -50,10 +48,7 @@ $max-vw: 1680;
 
 // ex) @include fluid-text(24px,29px,64px,72px);
 @mixin fluid-text($min-font-size, $min-line-height, $max-font-size, $max-line-height) {
-    @include fluid-type(
-        font-size $min-font-size $max-font-size,
-        line-height $min-line-height $max-line-height
-    );
+    @include fluid-type(font-size $min-font-size $max-font-size, line-height $min-line-height $max-line-height);
 }
 
 @mixin fluid-type2($rules...) {
@@ -71,11 +66,7 @@ $max-vw: 1680;
             $prop: nth($rule, 1);
             $min-val: nth($rule, 2);
             $max-val: nth($rule, 3);
-            #{$prop}: calc(
-                #{$min-val} +
-                    #{strip-unit($max-val - $min-val)} *
-                    ((100vw - #{$min}px) / #{$max - $min})
-            );
+            #{$prop}: calc(#{$min-val} + #{strip-unit($max-val - $min-val)} * ((100vw - #{$min}px) / #{$max - $min}));
         }
     }
 
