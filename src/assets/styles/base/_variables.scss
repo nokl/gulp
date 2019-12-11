@@ -1,9 +1,11 @@
 // Sizes
 $pc-base-size: 1440;
 $sp-base-size: 750;
+$switch-size: 768;
 
 // Media Queries
-$media_sm: 'screen and (max-width:768px)';
+$media_sm: 'screen and (max-width:#{$switch-size}px)';
+$media_pc: 'screen and (min-width:#{$switch-size+1}px)';
 $media_md: 'screen and (max-width:#{$pc-base-size}px)';
 $media_lg: 'screen and (min-width:#{$pc-base-size+1}px)';
 
