@@ -2,7 +2,7 @@
 import path from 'path';
 
 // modules
-import { paths } from './gulp/conf';
+import { paths, isProd } from './gulp/conf';
 import { sync } from 'glob';
 
 // plugins
@@ -16,7 +16,7 @@ sync(paths.script.ext, { cwd }).map(key => {
 
 export const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
-    devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
+    devtool: !isProd ? 'source-map' : false,
     entry: entries,
     output: {
         path: path.resolve(__dirname, paths.script.dest),
@@ -48,7 +48,7 @@ export const webpackConfig = {
     },
     plugins: [],
     optimization: {
-        minimize: true,
+        minimize: isProd,
         minimizer: [
             new TerserPlugin({
                 parallel: true,
