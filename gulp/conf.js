@@ -32,5 +32,5 @@ export const paths = {
     static: {
         src: `${SRC}/static/**/*`,
         dest: DEST,
-    }
+    },
 };

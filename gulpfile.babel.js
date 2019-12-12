@@ -26,16 +26,9 @@ const watchFiles = () => {
 /**
  * dev
  */
-export const dev = series(
-    clean,
-    parallel(styles, html, scripts, images, copy),
-    parallel(serve, watchFiles)
-);
+export const dev = series(clean, parallel(styles, html, scripts, images, copy), parallel(serve, watchFiles));
 
 /**
  * production build
  */
-export const build = series(
-    clean,
-    parallel(styles, html, scripts, images, copy),
-);
+export const build = series(clean, parallel(styles, html, scripts, images, copy));

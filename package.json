@@ -15,7 +15,7 @@
     "dev": "cross-env NODE_ENV=development gulp dev",
     "build": "cross-env NODE_ENV=production gulp build",
     "tasks": "gulp --tasks",
-    "fmt": "prettier src/**/*{.vue,.php,.html,.scss,.js} --write"
+    "fmt": "prettier {*,**/*}{.vue,.php,.html,.scss,.js} --write --ignore-path .gitignore"
   },
   "browserslist": [
     "last 2 version",
