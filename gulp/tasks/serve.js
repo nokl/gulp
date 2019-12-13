@@ -25,7 +25,7 @@ export function serve(cb) {
         ghostMode: false,
         server: {
             baseDir: DEST,
-            index: 'index.html'
+            index: 'index.html',
         },
     });
     cb();

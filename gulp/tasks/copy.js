@@ -11,8 +11,10 @@ import notify from 'gulp-notify';
  */
 export function copy() {
     return src([paths.static.src, paths.fonts.src])
-        .pipe(plumber({
-            errorHandler: notify.onError('<%= error.message %>')
-        }))
+        .pipe(
+            plumber({
+                errorHandler: notify.onError('<%= error.message %>'),
+            })
+        )
         .pipe(dest(paths.static.dest));
-};
+}
