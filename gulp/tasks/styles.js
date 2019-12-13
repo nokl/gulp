@@ -27,7 +27,13 @@ export function styles() {
                 }),
             }).on('error', sass.logError)
         )
-        .pipe(postcss([css_variables]))
+        .pipe(
+            postcss([
+                css_variables({
+                    preserve: true,
+                }),
+            ])
+        )
         .pipe(
             autoprefixer({
                 grid: 'autoplace',
