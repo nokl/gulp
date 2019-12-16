@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: $font_all;
+    font-family: $font-family-default;
     color: $color_black;
     font-size: 1.6em;
     font-weight: 400;
@@ -14,13 +14,14 @@ body {
     -webkit-overflow-scrolling: touch;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -webkit-print-color-adjust: exact;
-    -moz-osx-font-smoothing: grayscale;
     overscroll-behavior: none;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 img {

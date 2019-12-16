@@ -10,7 +10,9 @@ $media_md: 'screen and (max-width:#{$pc-base-size}px)';
 $media_lg: 'screen and (min-width:#{$pc-base-size+1}px)';
 
 // Fonts
-$font_all: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    Meiryo, sans-serif;
+$font-bold: 600;
 
 // Colors
 $color_black: #3b3b3b;
