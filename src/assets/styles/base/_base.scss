@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: $font-family-default;
-    color: $color_black;
+    color: $color-black;
     font-size: 1.6em;
     font-weight: 400;
     letter-spacing: normal;
@@ -46,8 +46,8 @@ a:visited {
 }
 
 ::selection {
-    background-color: $color_black;
-    color: $color_white;
+    background-color: $color-black;
+    color: $color-white;
 }
 
 .disnone {
