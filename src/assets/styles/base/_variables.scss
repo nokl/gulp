@@ -22,7 +22,7 @@ $z-header: 100;
 // CSS Variables
 :root {
     --base-size: #{$pc-base-size};
-    @media #{$media-sm} {
+    @include mq-mobile {
         --base-size: #{$sp-base-size};
     }
 }
