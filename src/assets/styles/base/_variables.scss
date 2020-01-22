@@ -1,13 +1,11 @@
-// Sizes
+// Design sizes
 $pc-base-size: 1440;
 $sp-base-size: 750;
-$switch-size: 768;
 
-// Media Queries
-$media_sm: 'screen and (max-width:#{$switch-size}px)';
-$media_pc: 'screen and (min-width:#{$switch-size+1}px)';
-$media_md: 'screen and (max-width:#{$pc-base-size}px)';
-$media_lg: 'screen and (min-width:#{$pc-base-size+1}px)';
+// Breakpoints
+$break-point-pc: 1440px;
+$break-point-tablet: 1024px;
+$break-point-mobile: 768px;
 
 // Fonts
 $font-family-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
