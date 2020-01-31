@@ -1,9 +1,6 @@
 export default class Index {
-    constructor(opt = {}) {
-        this.init(opt);
-    }
-    init(opt) {
-        this.opt = opt;
+    constructor(props = {}) {
+        this.props = props;
         console.log('Hello World');
     }
 }
