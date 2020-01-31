@@ -9,12 +9,13 @@ body {
     font-weight: 400;
     letter-spacing: normal;
     background-repeat: no-repeat;
-    background-color: #ffffff;
-    overflow: hidden;
+    background-color: $color-white;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    word-break: break-all;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
