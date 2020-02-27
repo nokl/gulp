@@ -32,3 +32,8 @@ export const dev = series(clean, parallel(styles, html, scripts, images, copy), 
  * production build
  */
 export const build = series(clean, parallel(styles, html, scripts, images, copy));
+
+/**
+ * only serve
+ */
+export const server = serve;
