@@ -23,8 +23,8 @@
     "IE 11"
   ],
   "devDependencies": {
-    "@babel/core": "7.8.6",
-    "@babel/preset-env": "7.8.6",
+    "@babel/core": "7.8.7",
+    "@babel/preset-env": "7.8.7",
     "@babel/register": "7.8.6",
     "babel-loader": "8.0.6",
     "browser-sync": "2.26.7",
