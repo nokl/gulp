@@ -19,8 +19,9 @@ export const webpackConfig = {
     devtool: !isProd ? 'source-map' : false,
     entry: entries,
     output: {
-        path: path.resolve(__dirname, paths.script.dest),
         filename: '[name]',
+        path: path.resolve(__dirname, paths.script.dest),
+        publicPath: paths.script.publicPath,
     },
     module: {
         rules: [
