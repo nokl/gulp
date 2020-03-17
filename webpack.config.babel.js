@@ -9,10 +9,10 @@ import { sync } from 'glob';
 import TerserPlugin from 'terser-webpack-plugin';
 import WebpackBar from 'webpackbar';
 
-const cwd = paths.script.src.replace(paths.script.ext, '');
+const cwd = paths.script.src.replace(`*${paths.script.ext}`, '');
 const entries = {};
-sync(paths.script.ext, { cwd }).map(key => {
-    entries[key] = path.resolve(__dirname, cwd + key);
+sync(`*${paths.script.ext}`, { cwd }).map(filename => {
+    entries[filename.replace(paths.script.ext, '')] = path.resolve(__dirname, cwd + filename);
 });
 
 export const webpackConfig = {
