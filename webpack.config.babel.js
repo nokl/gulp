@@ -7,6 +7,7 @@ import { sync } from 'glob';
 
 // plugins
 import TerserPlugin from 'terser-webpack-plugin';
+import WebpackBar from 'webpackbar';
 
 const cwd = paths.script.src.replace(paths.script.ext, '');
 const entries = {};
@@ -47,7 +48,7 @@ export const webpackConfig = {
             },
         ],
     },
-    plugins: [],
+    plugins: [new WebpackBar()],
     optimization: {
         minimize: isProd,
         minimizer: [
