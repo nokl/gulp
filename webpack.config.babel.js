@@ -1,3 +1,5 @@
+import * as webpack from 'webpack';
+
 // config
 import path from 'path';
 
@@ -15,12 +17,15 @@ sync(`*${paths.script.ext}`, { cwd }).map(filename => {
     entries[filename.replace(paths.script.ext, '')] = path.resolve(__dirname, cwd + filename);
 });
 
+/**
+ * @type {webpack.Configuration}
+ */
 export const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
     devtool: !isProd ? 'source-map' : false,
     entry: entries,
     output: {
-        filename: '[name]',
+        filename: '[name].js',
         path: path.resolve(__dirname, paths.script.dest),
         publicPath: paths.script.publicPath,
     },
