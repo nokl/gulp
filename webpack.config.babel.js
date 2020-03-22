@@ -13,7 +13,7 @@ import WebpackBar from 'webpackbar';
 
 const cwd = paths.script.src.replace(`*${paths.script.ext}`, '');
 const entries = {};
-sync(`*${paths.script.ext}`, { cwd }).map(filename => {
+sync(`*${paths.script.ext}`, { cwd }).map((filename) => {
     entries[filename.replace(paths.script.ext, '')] = path.resolve(__dirname, cwd + filename);
 });
 
